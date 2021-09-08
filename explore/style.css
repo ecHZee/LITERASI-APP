@@ -88,6 +88,8 @@ body {
 
 .bold-text {
     font-weight: bold;
+    padding-left: 11px;
+    padding-top: 5px;
 }
 
 .header-book {
@@ -106,6 +108,7 @@ body {
 .book {
     text-align: center;
     margin: 10px;
+    margin-top: 0px;
 }
 
 .book p {

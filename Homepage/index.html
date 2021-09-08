@@ -2,35 +2,37 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Page</title>
 
-  <link href="../navbar.css" rel="stylesheet" type="text/css">
-  <link href="style.css" rel="stylesheet" type="text/css">
+	<link href="../navbar.css" rel="stylesheet" type="text/css">
+	<link href="style.css" rel="stylesheet" type="text/css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-  <!-- UIkit CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
 
-  <!-- UIkit JS -->
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js">
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js">
 
-  </script>
-  <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js">
+	</script>
+	<script src="https://code.iconify.design/2/2.0.4/iconify.min.js">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js">
 
-  </script>
-  <script src="https://kit.fontawesome.com/0dda6707d2.js" crossorigin="anonymous">
-  </script>
+	</script>
+	<script src="https://kit.fontawesome.com/0dda6707d2.js" crossorigin="anonymous">
+
+	</script>
 </head>
 
 <body onload="ambilBuku()" class="margin-bawah">
-  <form class="uk-position-top uk-position-fixed uk-flex uk-flex-center bar navbarbaru" id="search1" onsubmit="search(event)">
-    <div class="uk-inline">
-      <span class="uk-form-icon" uk-icon="icon: search"></span>
+	<form class="uk-position-top uk-position-fixed uk-flex uk-flex-center bar navbarbaru" id="search1" onsubmit="search(event)">
+		<div class="uk-inline">
+			<span class="uk-form-icon" uk-icon="icon: search"></span>
       <input type="text" placeholder="Buku apa yang anda cari?" class="uk-input uk-text-italic uk-text-small uk-text-bold" id="search-input" style="width: 80vw">
     </div>
   </form>
@@ -48,37 +50,37 @@
         <div class="book-remind uk-flex uk-flex-column">
           <div class="uk-child-width-auto uk-grid-collapse uk-flex-center" uk-grid>
             <span onclick="reminder(this)" style="margin-left: 5px; margin-right: 5px">
-              <span class="iconify" data-icon="emojione:blue-book">
+              <span class="iconify" data-icon="emojione:blue-book" style="color: gray;">
               </span>
               <p class="text-remind">Senin</p>
             </span>
             <span onclick="reminder(this)" style="margin-left: 5px; margin-right: 5px">
-              <span class="iconify" data-icon="emojione:blue-book">
+              <span class="iconify" data-icon="emojione:blue-book" style="color: gray;">
               </span>
               <p class="text-remind">Selasa</p>
             </span>
             <span onclick="reminder(this)" style="margin-left: 5px; margin-right: 5px">
-              <span class="iconify" data-icon="emojione:blue-book">
+              <span class="iconify" data-icon="emojione:closed-book" style="color: gray;">
               </span>
               <p class="text-remind">Rabu</p>
             </span>
             <span onclick="reminder(this)" style="margin-left: 5px; margin-right: 5px">
-              <span class="iconify" data-icon="emojione:closed-book">
+              <span class="iconify" data-icon="emojione:blue-book" style="color: gray;">
               </span>
               <p class="text-remind">Kamis</p>
             </span>
             <span onclick="reminder(this)" style="margin-left: 5px; margin-right: 5px">
-              <span class="iconify" data-icon="emojione-monotone:blue-book">
+              <span class="iconify" data-icon="emojione-monotone:blue-book" style="color: gray;">
               </span>
               <p class="text-remind">Jumat</p>
             </span>
             <span onclick="reminder(this)" style="margin-left: 5px; margin-right: 5px">
-              <span class="iconify" data-icon="emojione-monotone:blue-book">
+              <span class="iconify" data-icon="emojione-monotone:blue-book" style="color: gray;">
               </span>
               <p class="text-remind">Sabtu</p>
             </span>
             <span onclick="reminder(this)" style="margin-left: 5px; margin-right: 5px">
-              <span class="iconify" data-icon="emojione-monotone:blue-book">
+              <span class="iconify" data-icon="emojione-monotone:blue-book" style="color: gray;">
               </span>
               <p class="text-remind">Minggu</p>
             </span>
@@ -153,7 +155,7 @@
       }
 
       if (currentColor == "emojione:closed-book") {
-        element.innerHTML = `<span class="iconify" data-icon="emojione-monotone:blue-book"></span><p class="text-remind">${day}</p>`
+        element.innerHTML = `<span class="iconify" data-icon="emojione-monotone:blue-book" style="color: gray;"></span><p class="text-remind">${day}</p>`
         return
       }
 

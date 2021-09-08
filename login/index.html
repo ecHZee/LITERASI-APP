@@ -28,16 +28,16 @@
 
         <form >
 
-            <div class="uk-margin">
-                <div class="uk-inline">
+            <div class="uk-margin padding">
+                <div class="uk-inline border">
                     <span class="uk-form-icon" uk-icon="icon: user"></span>
                     <input class="uk-input uk-form-width-large" type="Username" placeholder="Username">
                 </div>
             </div>
 
 
-            <div class="uk-margin">
-                <div class="uk-inline">
+            <div class="uk-margin padding">
+                <div class="uk-inline border">
                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
                     <input class="uk-input uk-form-width-large" type="Password" placeholder="Password">
                 </div>
@@ -67,7 +67,7 @@
   }
 
   function login() {
-    UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Yeay kamu berhasil masuk'})
+    UIkit.notification({message: '<span uk-icon=\'icon: check\' style:\'background-color: blue\'></span> Yeay kamu berhasil masuk'})
     setTimeout(function(){ window.location.href = "/Homepage" }, 1000);
 
     localStorage.setItem("isLoggedIn", true)
