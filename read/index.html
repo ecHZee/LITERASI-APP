@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Page</title>
+  <link href="read.css" rel="stylesheet" type="text/css" />
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js">
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js">
+
+  </script>
+  <!--UIkit icon-->
+  <script src="uikit/dist/js/uikit-icons.min.js">
+
+  </script>
+</head>
+
+<body onload="bukuBacaan()">
+  <!--Navigation Bar-->
+  <nav class="uk-navbar-container navbar" uk-navbar id="nav">
+    <div class="uk-navbar-left mode">
+      <a href="/index.html" class="uk-button uk-padding-remove" uk-icon="icon:arrow-left; ratio: 2"></a>
+    </div>
+  </nav>
+  <div>
+    <header>
+      <div class="uk-panel uk-text-center">
+        <h1 class="uk-margin-top" id="Read-title"></h1>
+      </div>
+    </header>
+
+    <!--content-->
+    <span id="Read-content"></span>
+
+  </div>
+  <div style="height: 160px"></div>
+  <!--footer-->
+  <div class="icon uk-container uk-position-bottom uk-position-fixed">
+    <footer>
+      <div style="background-color: white" id="bottom-bar" class="uk-flex uk-flex-center uk-flex-middle uk-width-1-1">
+        <div class="uk-width-1-2">
+          <button class="uk-inline uk-button uk-button-default" id="bottom-bar-button" type="button">Daftar Isi</button>
+        </div>
+        <div class="ini-tombol-loh" uk-dropdown id="Read-daftar-isi">
+        </div>
+        <input class="uk-width-1-2" type="checkbox" id="switch" name="mode"></input>
+        <label for="switch">Toggle</label>
+      </div>
+  </div>
+  </footer>
+  </div>
+  <script>
+    var checkbox = document.querySelector('input[name=mode]');
+
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        trans()
+        document.documentElement.setAttribute('data-theme', 'dartheme')
+        document.getElementById("bottom-bar").style.background = "#232323"
+        document.getElementById("bottom-bar-button").style.color = "white"
+        document.getElementById("Read-title").style.color = "white"
+        document.getElementById("Bab-title").style.color = "white"
+      } else {
+        trans()
+        document.documentElement.setAttribute('data-theme', 'lighttheme')
+        document.getElementById("bottom-bar").style.background = "white"
+        document.getElementById("bottom-bar-button").style.color = "#333"
+        document.getElementById("Read-title").style.color = "#333"
+        document.getElementById("Bab-title").style.color = "#333"
+      }
+    })
+
+    let trans = () => {
+      document.documentElement.classList.add('transition');
+      window.setTimeout(() => {
+        document.documentElement.classList.remove('transition');
+      }, 1000)
+    }
+
+    function bukuBacaan() {
+      const urlParams = new URLSearchParams(window.location.search)
+      const idParameter = urlParams.get('id')
+
+      fetch("../source.json").
+        then((x) => x.json().then((res) => {
+
+          let title = document.getElementById('Read-title')
+          let content = document.getElementById('Read-content')
+          let daftarIsi = document.getElementById("Read-daftar-isi")
+
+          let data = res.find((item) => item.id == idParameter)
+          if (!data) data = res[0]
+
+          for (let x in data.isi) {
+            let y = data.isi[x]
+
+            daftarIsi.innerHTML += `<button class="uk-button uk-button-default uk-width-1-1" type="button" onclick="gantiBab('${x}')">${x}</button>`
+          }
+
+
+          title.innerText = data.title
+
+          let bab = Object.keys(data.isi)[0]
+          let isi = data.isi[bab]
+          content.innerHTML = `<div class="uk-container uk-margin-bottom uk-margin-large-top uk-text-center"><h2 class="uk-margin-bottom uk-margin-remove-top" id="Bab-title">${bab}</h2><hr></div><div class="uk-margin-medium-left uk-margin-medium-right borderp"><div><p>${isi}</p></div></div>`
+
+        }))
+    }
+
+    function gantiBab(bab) {
+      const urlParams = new URLSearchParams(window.location.search)
+      const idParameter = urlParams.get('id')
+
+      fetch("../source.json").
+        then((x) => x.json().then((res) => {
+
+          let content = document.getElementById('Read-content')
+
+          let data = res.find((item) => item.id == idParameter)
+          if (!data) data = res[0]
+
+          let isi = data.isi[bab]
+          content.innerHTML = `<div class="uk-container uk-margin-bottom uk-margin-large-top uk-text-center"><h2 class="uk-margin-bottom uk-margin-remove-top" id="Bab-title">${bab}</h2><hr></div><div class="uk-margin-medium-left uk-margin-medium-right borderp"><div><p>${isi}</p></div></div>`
+
+        }))
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+.bar {
+    background-color: #6EA8C9;
+    text-align: center;
+    color: #1A4975;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 18px;
+}
+
+.text {
+    margin: 50px 20px 0px 20px;
+    /* background-color: lightblue; */
+}
+
+.text p {
+    margin: 0px;
+}
+
+.bold-text {
+    font-weight: bold;
+  }
+  
+  .header-book {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 0px;
+    margin: 0px;
+  }
+  
+  .card-rousel {
+    /* background-color: red; */
+    padding: 0px;
+    margin: 10px;
+  }
+  
+  .book {
+    text-align: center;
+    margin: 10px;
+
+  }
+  
+  .book p {
+    margin-top: 5px;
+    margin-bottom: unset;
+  }
+  
+  .author {
+    font-size: 12px;
+  }
+  
+.container-search {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.navbarbaru {
+  height: 45px;
+  padding: 10px !important;
+}
+
+.navbarbaru input {
+  -webkit-transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -moz-transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -o-transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-radius: 14px;
+  height: 100%;
+}
+
+.margin-atas {
+  padding-top: 10px;
+}

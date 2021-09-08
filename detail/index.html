@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail</title>
+  <link href="detail.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+  <link rel="jssheet" href="detail.js" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js">
+  </script>
+  <style>
+    #more {
+      display: none;
+    }
+  </style>
+</head>
+
+<body onload="ListBuku()">
+  <!-- Nav bar -->
+  <div class="bar uk-navbar-left mode"">
+    <span>.</span>
+       <a href=" /Homepage/index.html" class="uk-button uk-padding-remove uk-margin-small-left" uk-icon="icon:arrow-left; ratio: 2"></a>
+  </div>
+
+  <!-- Buku -->
+  <div class="uk-align-center uk-text-center">
+    <div class="uk-container">
+      <div>
+        <!-- judul -->
+        <h1 class="literasi-judul uk-margin-small-bottom" id="detail-judul">Mantappu Jiwa</h1>
+        <!-- image -->
+        <img src="https://i.ibb.co/KWG3JGs/Hnet-com-image-2.jpg" alt="mantappu" border="0" width="" "uk-align center"
+          class="cover-buku" id="detail-image">
+        <!-- penulis -->
+        <h3 class="literasi-penulis uk-text-default uk-margin-remove" id="detail-author">Jerome Polin</h2>
+          <!-- genre -->
+          <p class="literasi-genre uk-margin-small uk-text-light uk-text-small" id="detail-genre">non-fiksi
+          </p>
+          <!-- button baca -->
+          <button class="button-baca uk-button-default uk-border-rounded"><a class="uk-text-secondary"
+              href="/read/index.html">Baca</a> </button>
+          <!-- favorite -->
+          <button class="uk-button uk-button-text uk-margin-small-left uk-margin-small-right" id="main-heart-button" onclick="jadiMerah(this)">
+            <ion-icon name="heart" class="literasi-button"></ion-icon>
+          </button>
+          <!-- Share -->
+          <button class=" uk-button uk-button-text">
+            <ion-icon name="share" class="literasi-button"></ion-icon>
+          </button>
+          <div uk-dropdown="pos: bottom-center" "mode: click" class="dropdown">
+            <ul class="uk-nav uk-dropdown-nav">
+              <li class="uk-text-left uk-text-bold uk-margin-small-bottom ">Share To</li>
+              <li class="uk-flex-row uk-icon-button uk-margin-small-right" uk-icon="facebook">
+                <a href="https://www.facebook.com/"></a>
+              </li>
+              <li class="uk-flex-row uk-icon-button uk-margin-small-right " uk-icon="instagram">
+                <a href="https://www.instagram.com/"></a>
+              </li>
+              <li class="uk-flex-row uk-icon-button uk-margin-small-right" uk-icon="twitter">
+                <a href="https://www.twitter.com/"></a>
+              </li>
+            </ul>
+          </div>
+          <p class="literasi-sinopsis uk-text-light uk-margin-remove-bottom word-wrap" id="detail-sinopsis">
+          </p>
+          <a class="read-more uk-text-primary btn-read-more" onclick="showMore()" id="myBtn">Baca
+            Selengkapnya</a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- buku serupa -->
+  <div class="uk-container uk-margin-small">
+    <h2 class="uk-text-bold"> Buku serupa lainnya</h2>
+  </div>
+
+  <div class="uk-container">
+    <div class="uk-child-width-1 uk-grid-match" id="container-more" style="padding-left: 30px;">
+
+      <!-- isi buku serupa -->
+
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+    function showMore() {
+      let sinopsis = document.getElementById("detail-sinopsis")
+      let button = document.getElementById("myBtn")
+
+      if (sinopsis.classList.contains("word-wrap")) {
+        button.innerText = "Baca Lebih Sedikit"
+        sinopsis.classList.remove("word-wrap")
+      } else {
+        button.innerText = "Baca Selengkapnya"
+        sinopsis.classList.add("word-wrap")
+      }
+    }
+
+    function jadiMerah(element) {
+      element.style.color = "#FF2626"
+    }
+  </script>
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+  <script>
+    function ListBuku() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const idParameter = urlParams.get('id');
+
+      fetch("../source.json").
+        then((x) => x.json().then((res) => {
+          let title = document.getElementById('detail-judul')
+          let author = document.getElementById('detail-author')
+          let genre = document.getElementById('detail-genre')
+          let sinopsis = document.getElementById('detail-sinopsis')
+          let img = document.getElementById('detail-image')
+          let containerMore = document.getElementById('container-more')
+
+          let data = res.find((item) => item.id == idParameter)
+          if (!data) data = res[0]
+
+          console.log(data)
+          title.innerText = data.title
+          author.innerText = data.author
+          genre.innerText = data.genres[0]
+          sinopsis.innerText = data.sinopsis
+          img.src = data.image_url
+
+          let wishlist = []
+
+          fetch("../profile.json").
+            then((y) => y.json().then((user) => {
+              wishlist = user.wishlist
+              if (wishlist.includes(data.id)) {
+                document.getElementById("main-heart-button").style.color = "#FF2626"
+              }
+            }))
+
+          data.buku_serupa.forEach((id) => {
+            let bukuSerupa = res.find((e) => e.id == id)
+            let heartColor = wishlist.includes(id) ? 'style="color: #FF2626"' : ''
+            if (bukuSerupa) {
+              containerMore.innerHTML += `<div class="uk-margin-remove-top uk-card uk-card-hover uk-card-body uk-padding-right" uk-grid onclick="redirectDetailID(${bukuSerupa.id})"><div class=" uk-width-1-3 uk-padding uk-padding-remove-right image"><img src="${bukuSerupa.image_url}" alt="" border="0" width=""></div><div class="uk-width-2-3 uk-position-center-right"><h5 class="literasi-judul-serupa uk-margin-small">${bukuSerupa.title}</h5><h5 class="literasi-penulis-serupa uk-margin-remove-top uk-text-light">${bukuSerupa.author}</h5><button class="uk-button uk-button-text" ${heartColor} onclick="jadiMerah(this)"><ion-icon name="heart" class="literasi-button"></ion-icon></button><!-- Share --><button class="uk-button uk-button-text uk-margin-left"><ion-icon name="share" class="literasi-button"></ion-icon></button><div uk-dropdown="pos: right-center" "mode: click" class="dropdown"><ul class="uk-nav uk-dropdown-nav"><li class="uk-text-left uk-text-bold uk-margin-small-bottom ">Share To</li><li class="uk-flex-row uk-icon-button uk-margin-small-right" uk-icon="facebook"><a href="facebook.com"></a></li><li class="uk-flex-row uk-icon-button uk-margin-small-right " uk-icon="instagram"><a href="instagram.com"></a></li><li class="uk-flex-row uk-icon-button uk-margin-small-right" uk-icon="twitter"><a href="twitter.com"></a></li></ul></div></div></div>`
+            }
+          })
+
+        }))
+    }
+    
+    function redirectDetailID(id) {
+      window.location.href = `/detail/index.html\?id=${id}`
+    }
+  </script>
+</body>
+
+</html>

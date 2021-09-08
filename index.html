@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Literasi</title>
+
+  <link href="literasi.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
+
+</head>
+<body>
+
+  <div class="container uk-position-center uk-animation-fade uk-text-center">
+    <h1 class="literasi ">LITERASI</h1>
+    <h2 class="literasi2 uk-text-center uk-margin">Tingkatkan Minat Bacamu</h2>
+    <div uk-spinner></div>
+  </div>
+
+  <script>
+    if (localStorage.getItem("isLoggedIn")) {
+      window.location.href = "/Homepage"
+    }
+    setTimeout(function(){ window.location.href = "/login" }, 1500);
+  </script>
+
+</body>
+
+</html>

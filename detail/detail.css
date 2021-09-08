@@ -1,0 +1,87 @@
+.textbox {
+  background-color: #6EA8C9;
+}
+
+.bar {
+    background-color: #6EA8C9;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 0px;
+    line-height: 40px;
+    letter-spacing: 0px;
+}
+
+.button-baca {
+  margin: 0;
+    overflow: visible;
+    font: inherit;
+    -webkit-appearance: none;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 15px;
+    vertical-align: middle;
+    font-size: .7rem;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: .1s ease-in-out;
+    transition-property: color,background-color,border-color;
+}
+
+.word-wrap {
+  font-size: small;
+
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+
+.uk-dropdown-bottom{
+  margin: 0px;
+}
+
+/* RESPONSIVE */
+.literasi-button {
+  font-size: 20px!important;
+}
+.literasi-judul {
+  font-size: 30px!important;
+}
+.literasi-judul-serupa {
+  font-size: 20px !important;
+}
+.literasi-penulis-serupa {
+  font-size: 15px !important;
+}
+.literasi-penulis {
+  font-size: 20px !important;
+}
+.literasi-genre{
+  font-size: 15px !important;
+}
+.literasi-sinopsis{
+  font-size: 15px !important;
+}
+.cover-buku {
+  width: 250px;
+  border-style: groove ;
+}
+
+
+/* 
+@media only screen and (max-width: 1000px){
+  literasi-judul {
+  font-size: 2px !important;
+  }
+
+.literasi-penulis {
+  font-size: 2px !important;
+  }
+  .literasi-judul-utama {
+font-size: 2px !important;
+  }
+} */
+

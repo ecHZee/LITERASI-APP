@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PROFILE</title>
+
+	<link href="Profile.css" rel="stylesheet" type="text/css" />
+	<link href="../navbar.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
+	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
+	<script src="https://kit.fontawesome.com/0dda6707d2.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+	<!-- Nav bar -->
+	<div class="bar" uk-grid>
+		<div class="uk-margin-small uk-width-1-6"></div>
+		<span class="literasi uk-width-2-3">.</span>
+	</div>
+
+	<!-- Poto Profile -->
+	<div class="uk-container uk-margin">
+		<div class="uk-width-1-1 uk-text-center ">
+			<img class="uk-border-circle" id="User-Image" alt="">
+			<div>
+				<h1 class="nama" id="Username"></h1>
+			</div>
+		</div>
+
+		<!-- Textbox -->
+		<div class="uk-width-1-1">
+			<textarea class="box uk-textarea uk-text-italic " rows="5" id="textAreaStatus"
+				placeholder="Apa yang mau kamu tulis..." onchange="submitStatus(this)"></textarea>
+		</div>
+		<!-- buku favorit -->
+
+		<div class="carousel-book">
+			<div class="bold-text header-book">
+				<h4 class="bold-text uk-margin-remove">Buku Favorit</h4>
+			</div>
+			<div class="card-rousel" uk-slider>
+				<ul class="uk-slider-items uk-child-width-1-3 uk-child-width-1-6@m" id="Wishlist">
+					
+				</ul>
+			</div>
+		</div>
+		<!-- Lainnya -->
+
+		<div>
+			<h4 class="uk-text-bold uk-margin-top header">Lainnya</h4>
+			<ul class="lainnya">
+				<div>
+					<button id="js-modal-prompt" class="button uk-width-1-1 uk-border-rounded">
+						<li class=" uk-background-default uk-text-left ">
+							<span>Ganti Password</span>
+							<span class="uk-margin-remove uk-icon uk-align-right" uk-icon="chevron-right"><svg
+									width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+									<polyline fill="none" stroke="#000" stroke-width="1.03" points="7 4 13 10 7 16">
+									</polyline>
+								</svg></span>
+						</li>
+					</button>
+
+
+
+					<button type="button" uk-toggle="target: #modal-privasi"
+						class="button uk-width-1-1 uk-border-rounded uk-margin-top">
+						<li class=" uk-background-default uk-text-left ">
+							<span>Kebijakan Privasi</span>
+							<span class="uk-margin-remove uk-icon uk-align-right" uk-icon="chevron-right"><svg
+									width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+									<polyline fill="none" stroke="#000" stroke-width="1.03" points="7 4 13 10 7 16">
+									</polyline>
+								</svg></span>
+						</li>
+					</button>
+
+					<div id="modal-privasi" uk-modal>
+						<div class="uk-modal-dialog">
+
+							<button class="uk-modal-close-default" type="button" uk-close></button>
+
+							<div class="uk-modal-header">
+								<h2 class="uk-modal-title ">Kebijakan Privasi</h2>
+							</div>
+							<div class="uk-modal-body uk-border-rounded" uk-overflow-auto>
+
+								<p>At Literasi, accessible from literasi.netlify.app, one of our main priorities is the
+									privacy of our visitors. This
+									Privacy Policy document contains types of information that is collected and recorded
+									by Literasi and how we use it.
+								</p>
+
+								<p>If you have additional questions or require more information about our Privacy
+									Policy, do not hesitate to contact us.
+								</p>
+
+								<p>Log Files
+									Literasi follows a standard procedure of using log files. These files log visitors
+									when they visit websites. All
+									hosting companies do this and a part of hosting services' analytics. The information
+									collected by log files include
+									internet protocol (IP) addresses, browser type, Internet Service Provider (ISP),
+									date and time stamp, referring/exit
+									pages, and possibly the number of clicks. These are not linked to any information
+									that is personally identifiable.
+									The purpose of the information is for analyzing trends, administering the site,
+									tracking users' movement on the
+									website, and gathering demographic information. Our Privacy Policy was created with
+									the help of the Privacy Policy
+									Generator.</p>
+
+								<p>Cookies and Web Beacons
+									Like any other website, Literasi uses 'cookies'. These cookies are used to store
+									information including visitors'
+									preferences, and the pages on the website that the visitor accessed or visited. The
+									information is used to optimize
+									the users' experience by customizing our web page content based on visitors' browser
+									type and/or other information.
+								</p>
+
+								<p>For more general information on cookies, please read "Cookies" article from the
+									Privacy Policy Generator.</p>
+
+								<p>Privacy Policies
+									You may consult this list to find the Privacy Policy for each of the advertising
+									partners of Literasi.</p>
+
+								<p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or
+									Web Beacons that are used in
+									their respective advertisements and links that appear on Literasi, which are sent
+									directly to users' browser. They
+									automatically receive your IP address when this occurs. These technologies are used
+									to measure the effectiveness of
+									their advertising campaigns and/or to personalize the advertising content that you
+									see on websites that you visit.
+								</p>
+
+								<p>Note that Literasi has no access to or control over these cookies that are used by
+									third-party advertisers.</p>
+
+								<p>Third Party Privacy Policies
+									Literasi's Privacy Policy does not apply to other advertisers or websites. Thus, we
+									are advising you to consult the
+									respective Privacy Policies of these third-party ad servers for more detailed
+									information. It may include their
+									practices and instructions about how to opt-out of certain options.</p>
+
+								<p>You can choose to disable cookies through your individual browser options. To know
+									more detailed information about
+									cookie management with specific web browsers, it can be found at the browsers'
+									respective websites. What Are
+									Cookies?</p>
+
+								<p>You can choose to disable cookies through your individual browser options. To know
+									more detailed information about
+									cookie management with specific web browsers, it can be found at the browsers'
+									respective websites. What Are
+									Cookies?</p>
+
+								<p>Children's Information
+									Another part of our priority is adding protection for children while using the
+									internet. We encourage parents and
+									guardians to observe, participate in, and/or monitor and guide their online
+									activity.</p>
+
+								<p>Literasi does not knowingly collect any Personal Identifiable Information from
+									children under the age of 13. If you
+									think that your child provided this kind of information on our website, we strongly
+									encourage you to contact us
+									immediately and we will do our best efforts to promptly remove such information from
+									our records. </p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<button class="button uk-width-1-1 uk-border-rounded uk-margin-top" 
+					src="https://i.ibb.co/jV83NTB/image.png" data-alt="Image">
+					<li class=" uk-background-default uk-text-left">
+						<span>Tentang kami</span>
+						<span class="uk-margin-remove uk-icon uk-align-right" uk-icon="chevron-right"><svg width="20"
+								height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+								<polyline fill="none" stroke="#000" stroke-width="1.03" points="7 4 13 10 7 16">
+								</polyline>
+							</svg></span>
+					</li>
+				</button>
+
+
+
+				<button type="button" uk-toggle="target: #modal-hubungi-kami"
+					class="button uk-width-1-1 uk-border-rounded uk-margin-top">
+					<li class=" uk-background-default uk-text-left ">
+						<span>Hubungi kami</span>
+						<span class="uk-margin-remove uk-icon uk-align-right" uk-icon="chevron-right"><svg width="20"
+								height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+								<polyline fill="none" stroke="#000" stroke-width="1.03" points="7 4 13 10 7 16">
+								</polyline>
+							</svg></span>
+					</li>
+				</button>
+
+
+				<div id="modal-hubungi-kami" uk-modal>
+					<div class="uk-modal-dialog uk-modal-body uk-border-rounded">
+						<h2 class="uk-modal-title">Ada yang ingin kamu tanyakan?</h2>
+						<p>Hubungi kami jika kalian ada keluhan di <span
+								class="uk-text-primary">syntaxt.teamofficial@gmail.com</span>
+						</p>
+						<p class="uk-text-right">
+							<button class="uk-border-rounded uk-button uk-button-default uk-modal-close"
+								type="button">Batal</button>
+							<a href="https://mail.google.com/mail/u/0/?tab=om1#inbox"><button
+									class="uk-border-rounded uk-button uk-button-primary" type="button"> Email
+									kami</button></a>
+						</p>
+					</div>
+				</div>
+
+				<button type="button" uk-toggle="target: #modal-keluar"
+					class="button uk-width-1-1 uk-border-rounded uk-margin-top uk-margin-bottom">
+					<li class=" uk-background-default uk-text-left uk-text-danger ">
+						<span>Keluar</span>
+						<span class="uk-margin-remove uk-icon uk-align-right" uk-icon="chevron-right"><svg width="20"
+								height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+								<polyline fill="none" stroke="#000" stroke-width="1.03" points="7 4 13 10 7 16">
+								</polyline>
+							</svg></span>
+					</li>
+				</button>
+
+				<div id="modal-keluar" uk-modal>
+					<div class="uk-modal-dialog uk-modal-body uk-border-rounded ">
+						<h4 class="uk-text-center">Yakin nih mau keluar?</h4>
+
+
+						<p class="uk-text-center">
+							<button
+								class="uk-margin-top uk-margin-top uk-text-center uk-button uk-button-default uk-border-rounded uk-modal-close"
+								type="button">Batal</button>
+							<button onclick="logout()"
+								class=" uk-margin-top uk-margin-top uk-text-center uk-button uk-border-rounded uk-button-danger"
+								type="button">Keluar</button>
+						</p>
+					</div>
+				</div>
+		</div>
+		</ul>
+	</div>
+	</div>
+
+
+	<footer class="uk-position-fixed uk-position-bottom uk-flex">
+		<a href="../Homepage/index.html" class="uk-flex uk-flex-column uk-width-1-3 icon-pad"><i
+				class=" fas fa-home"></i>Home</a>
+		<a href="../explore/index.html" class="uk-flex uk-flex-column uk-width-1-3 icon-pad"><i
+				class=" fas fa-book-open"></i>Explore</a>
+		<a href="../profile/index.html" class="uk-flex uk-flex-column uk-width-1-3 icon-pad"><i
+				class=" fas fa-user"></i>Profile</a>
+	</footer>
+
+	<button uk-toggle="target: #my-id" type="button"></button>
+
+<script src="contact.js"></script>
+	<script>
+		// ganti Password//
+
+		UIkit.util.on('#js-modal-prompt', 'click', function (e) {
+			e.preventDefault();
+			e.target.blur();
+			UIkit.modal.prompt('Ganti Password', 'Password Baru').then(function (name) {
+				console.log('Prompted:', name)
+			});
+		});
+
+    function logout() {
+      localStorage.removeItem("isLoggedIn")
+      window.location.href = "/"
+    }
+
+		var saveData = JSON.parse(localStorage.saveData || null) || {};
+		document.getElementById("textAreaStatus").value = saveData.obj.status
+
+		// Store your data.
+		function saveStuff(obj) {
+			saveData.obj = obj;
+			saveData.time = new Date().getTime();
+			localStorage.saveData = JSON.stringify(saveData);
+		}
+
+		function submitStatus(element) {
+			let iniIsiText = document.getElementById("textAreaStatus").value
+			saveStuff({ "status": iniIsiText })
+		}
+	</script>
+</body>
+
+</html>

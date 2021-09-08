@@ -1,0 +1,136 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FAFAF7;
+    cursor: default;
+}
+
+.bar {
+    background-color: #6EA8C9;
+    text-align: center;
+    color: #1A4975;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 18px;
+}
+
+.remind-notif {
+    background-color: whitesmoke;
+    margin-top: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    box-shadow: 2px 1px 8px 2px;
+}
+
+.remind-book {
+    background-color: whitesmoke;
+    margin-top: 12px;
+    margin-left: 40px;
+    margin-right: 40px;
+    box-shadow: 2px 1px 8px 2px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.padding {
+    padding-left: 15px;
+    padding-right: 30px;
+}
+
+.marg-remind {
+    margin-left: 20px;
+}
+
+.karosel {
+  padding-top: 70px;
+}
+
+.book-remind {
+    text-align: center;
+    /* display: flex;
+    flex-direction: row; */
+    /* padding-left: 100px; */
+}
+
+.book-remind span {
+    margin-left: 12px;
+    margin-right: 12px;
+    color: rgb(0, 0, 0);
+}
+
+.book-remind p {
+    color: #111;
+}
+
+.text-remind {
+    font-size: 10px;
+}
+
+.margin-pt {
+    margin-top: 35px;
+}
+
+.pt1 {
+    margin-bottom: unset;
+    font-size: 14px;
+}
+
+.pt2 {
+    margin-top: 0px;
+    font-size: 10px;
+}
+
+.carousel-book {
+    margin: 20px 20px 2px 20px;
+    background-color: whitesmoke;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.header-book {
+    padding-top: 10px;
+    padding-left: 8px;
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
+.card-rousel {
+    /* background-color: red; */
+    padding: 0px;
+    margin: 10px;
+}
+
+.book {
+    text-align: center;
+    margin: 10px;
+}
+
+.book p {
+    margin-top: 5px;
+    margin-bottom: unset;
+}
+
+.author {
+    font-size: 12px;
+}
+
+.margin-atasbawah {
+  margin-bottom: 70px;
+}
+
+.navbarbaru {
+  height: 45px;
+  padding: 10px !important;
+}
+
+.navbarbaru input {
+  -webkit-transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -moz-transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -o-transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-radius: 14px;
+  height: 100%;
+}

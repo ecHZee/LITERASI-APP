@@ -1,0 +1,41 @@
+/* Top Navbar */
+.bar {
+    z-index: 2;
+    background-color: #6EA8C9;
+    text-align: center;
+    color: #1A4975;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 40px;
+    letter-spacing: 18px;
+    padding-right: 40px;
+}
+
+.margin-small {
+  margin-top: 5px !important; 
+  margin-bottom: 5px !important; 
+}
+
+/* Bottom Navbar */
+footer {
+    background: #6EA8C9;
+    padding: 0;
+    text-align: center;
+    z-index: 4;
+  }
+  footer a {
+    color: white;
+    font-size: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    transition: all .5s ease;
+  }
+  footer a:hover {
+    color: #1A4975;
+    text-decoration: none;
+  }
+
+.icon-pad {
+    margin: 0px  ;
+    font-size: 18px;
+  }  

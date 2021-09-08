@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link href="login.css" rel="stylesheet" type="text/css" />
+    <link rel="jssheet" href="login.js" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js">
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js">
+
+    </script>
+</head>
+
+<body class="uk-text-center">
+    <div class="uk-animation-fade">
+        <h1 class="literasi">LITERASI</h1>
+        <h2 class="literasi2">Tingkatkan Minat Bacamu</h2>
+    </div>
+
+    <div class="uk-container">
+
+        <form >
+
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    <input class="uk-input uk-form-width-large" type="Username" placeholder="Username">
+                </div>
+            </div>
+
+
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                    <input class="uk-input uk-form-width-large" type="Password" placeholder="Password">
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    <div>
+        <span class="syarat">Dengan mengklik daftar, kamu menyetujui Persyaratan dan Ketentuan Penggunaan LITERASI</span>
+    </div>
+    <div>
+        <button type="button" onclick="login()" class="submit-button uk-margin-top uk-margin-bottom uk-button-primary uk-button uk-button-default demo">Daftar</button>
+    </div>
+    <div>
+        <span class="uk-text-italic uk-text-light">Jika anda sudah punya akun, <a href=""
+                class="masuk-text uk-text-bold">Masuk disini</a>
+    </div>
+
+    <div>
+        <p class="bantuan-text uk-text-light uk-text-center">Butuh Bantuan?</p>
+    </div>
+
+<script>
+  if (localStorage.getItem("isLoggedIn")) {
+    window.location.href = "/Homepage"
+  }
+
+  function login() {
+    UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Yeay kamu berhasil masuk'})
+    setTimeout(function(){ window.location.href = "/Homepage" }, 1000);
+
+    localStorage.setItem("isLoggedIn", true)
+  }
+</script>
+
+</body>
+
+</html>

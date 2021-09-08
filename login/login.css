@@ -1,0 +1,53 @@
+.literasi {
+position: static;
+margin-top: 80px;
+height: 58px;
+/* display: flex; */
+/* align-items: center; */
+/* text-align: center; */
+letter-spacing: 0.06em;
+color: #1A4975;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 120%;
+}
+
+
+.literasi2 {
+position: static;
+margin: 10px;
+margin-bottom: 100px ;
+height: 24px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500px;
+font-size: 20px;
+line-height: 120%;
+/* identical to box height, or 24px */
+/* display: flex; */
+/* align-items: static; */
+/* text-align: static; */
+letter-spacing: 0.04em;
+color: #1A4975;
+}
+
+.submit-button {
+  border-radius: 48px !important;
+  background-color: #6EA8C9 !important;
+}
+
+.masuk-text {
+  color: #1A4975;
+  font-size: 13px;
+}
+
+.bantuan-text {
+  color: rgba(61, 47, 47, 0.49) !important;
+  margin-top:180px;
+}
+
+.syarat {
+  font-size: 13px;
+}

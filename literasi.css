@@ -1,0 +1,33 @@
+.literasi {
+/* position: center; */
+margin: 0;
+height: 58px;
+/* display: flex; */
+/* align-items: center; */
+/* text-align: center; */
+letter-spacing: 0.06em;
+color: #1A4975;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 120%;
+}
+
+
+.literasi2 {
+/* position: center; */
+margin: 0;
+height: 24px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 120%;
+/* identical to box height, or 24px */
+/* display: flex; */
+/* align-items: center; */
+/* text-align: center; */
+letter-spacing: 0.04em;
+color: #1A4975;
+}
